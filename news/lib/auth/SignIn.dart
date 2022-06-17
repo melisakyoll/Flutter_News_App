@@ -1,26 +1,29 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
-import 'package:news/pages/anasayfa.dart';
+import 'package:news/constant/color_constant.dart';
+import 'package:news/pages/home_page.dart';
 //import 'package:google_sign_in/google_sign_in.dart';
 
 FirebaseAuth _auth = FirebaseAuth.instance;
 
-class GirisYap extends StatefulWidget {
-  GirisYap({Key key}) : super(key: key);
+class SignIn extends StatefulWidget {
+  SignIn({Key key}) : super(key: key);
 
   @override
-  _GirisYapState createState() => _GirisYapState();
+  _SignInState createState() => _SignInState();
 }
 
-class _GirisYapState extends State<GirisYap> {
+class _SignInState extends State<SignIn> {
   final _key = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff7b0707),
+      backgroundColor: secondary,
       body: Form(
         key: _key,
         child: SingleChildScrollView(
@@ -47,24 +50,24 @@ class _GirisYapState extends State<GirisYap> {
                     }
                     return null;
                   },
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: whiteColor),
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
-                    errorStyle: TextStyle(color: Colors.white),
+                    errorStyle: TextStyle(color: whiteColor),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(width: 2.0, color: Colors.white),
+                      borderSide: BorderSide(width: 2.0, color: whiteColor),
                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                      borderSide: BorderSide(color: Colors.white, width: 1.5),
+                      borderSide: BorderSide(color: whiteColor, width: 1.5),
                     ),
                     prefixIcon: Icon(
                       Icons.mail_outline,
-                      color: Colors.white,
+                      color: whiteColor,
                     ),
                     hintText: "E - Mail",
-                    hintStyle: TextStyle(color: Colors.white),
+                    hintStyle: TextStyle(color: whiteColor),
                   ),
                 ),
               ),
@@ -77,24 +80,24 @@ class _GirisYapState extends State<GirisYap> {
                     }
                     return null;
                   },
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: whiteColor),
                   keyboardType: TextInputType.visiblePassword,
                   decoration: InputDecoration(
-                    errorStyle: TextStyle(color: Colors.white),
+                    errorStyle: TextStyle(color: whiteColor),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(width: 2.0, color: Colors.white),
+                      borderSide: BorderSide(width: 2.0, color: whiteColor),
                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                      borderSide: BorderSide(color: Colors.white, width: 1.5),
+                      borderSide: BorderSide(color: whiteColor, width: 1.5),
                     ),
                     prefixIcon: Icon(
                       Icons.vpn_key_outlined,
-                      color: Colors.white,
+                      color: whiteColor,
                     ),
                     hintText: "Şifre Giriniz",
-                    hintStyle: TextStyle(color: Colors.white),
+                    hintStyle: TextStyle(color: whiteColor),
                   ),
                 ),
               ),
@@ -109,26 +112,26 @@ class _GirisYapState extends State<GirisYap> {
                           //_signInWithEmailAndPassword();
                         }
                       },
-                      color: Color(0xff7b0707),
+                      color: secondary,
                       shape: RoundedRectangleBorder(
-                          side: BorderSide(color: Colors.white, width: 2.0),
+                          side: BorderSide(color: whiteColor, width: 2.0),
                           borderRadius: new BorderRadius.circular(20.0)),
                       elevation: 15.0,
                       child: Text(
                         "Giriş Yap",
                         style: TextStyle(
-                          color: Colors.white,
+                          color: whiteColor,
                         ),
                       ),
                     ),
                     RaisedButton(
-                      color: Color(0xff7b0707),
+                      color: secondary,
                       shape: RoundedRectangleBorder(
-                          side: BorderSide(color: Colors.white, width: 2.0),
+                          side: BorderSide(color: whiteColor, width: 2.0),
                           borderRadius: new BorderRadius.circular(20.0)),
                       elevation: 15.0,
-                      child: Text("Kayıt Ol",
-                          style: TextStyle(color: Colors.white)),
+                      child:
+                          Text("Kayıt Ol", style: TextStyle(color: whiteColor)),
                       onPressed: () {
                         Navigator.popAndPushNamed(context, "/Kayit");
                       },
@@ -157,7 +160,8 @@ class _GirisYapState extends State<GirisYap> {
 
   _anonymouslySing() async {
     await _auth.signInAnonymously();
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> Anasayfa()));
+    Navigator.of(context)
+        .pushReplacement(MaterialPageRoute(builder: (context) => HomePage()));
   }
 }
 

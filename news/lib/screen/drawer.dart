@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news/constant/color_constant.dart';
 
 class DrawerMenu extends StatelessWidget {
   const DrawerMenu({Key key}) : super(key: key);
@@ -11,7 +12,7 @@ class DrawerMenu extends StatelessWidget {
           children: <Widget>[
             DrawerHeader(
               decoration: BoxDecoration(
-                color: Color(0xff7b0707),
+                color: secondary,
               ),
               child: Align(
                 child: Column(
@@ -19,7 +20,7 @@ class DrawerMenu extends StatelessWidget {
                   children: [
                     Text(
                       "YENİ YAŞAM",
-                      style: TextStyle(color: Colors.white, fontSize: 37.0),
+                      style: TextStyle(color: whiteColor, fontSize: 37.0),
                     ),
                   ],
                 ),
@@ -28,7 +29,7 @@ class DrawerMenu extends StatelessWidget {
             ListTile(
               leading: Icon(
                 Icons.person,
-                color: Colors.deepOrangeAccent,
+                color: deepOrangeAc,
               ),
               title: Text(
                 "Hesabım",
@@ -41,7 +42,7 @@ class DrawerMenu extends StatelessWidget {
             ExpansionTile(
               leading: Icon(
                 Icons.bookmark,
-                color: Colors.teal[600],
+                color: tealColor,
               ),
               title: Text(
                 "Kategoriler",
@@ -53,7 +54,7 @@ class DrawerMenu extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(
                       Icons.assessment,
-                      color: Colors.green[400],
+                      color: grColor,
                     ),
                     title: Text(
                       "Ekonomi",
@@ -67,7 +68,7 @@ class DrawerMenu extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(
                       Icons.public,
-                      color: Colors.lightBlue[200],
+                      color: lightBlueColor,
                     ),
                     title: Text(
                       "Dünya",
@@ -80,7 +81,7 @@ class DrawerMenu extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(
                       Icons.devices,
-                      color: Colors.grey[800],
+                      color: grey8,
                     ),
                     title: Text(
                       "Teknoloji",
@@ -119,7 +120,7 @@ class DrawerMenu extends StatelessWidget {
             ListTile(
               leading: Icon(
                 Icons.settings,
-                color: Colors.grey[800],
+                color: grey8,
               ),
               title: Text(
                 "Ayarlar",

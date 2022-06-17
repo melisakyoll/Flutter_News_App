@@ -6,18 +6,17 @@ abstract class HomeAppBar extends StatelessWidget
     with PreferredSizeWidget
     implements BaseState {
   final String text;
-  const HomeAppBar({Key key, this.text})
-      : super(key: key);
+  const HomeAppBar({Key key, this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0,
-      backgroundColor: ColorConstants.instance.darkBurgundy,
+      backgroundColor: secondary,
       title: Text(
         text,
         style: TextStyle(
-          color: Colors.white,
+          color: whiteColor,
           fontWeight: FontWeight.bold,
         ),
       ),

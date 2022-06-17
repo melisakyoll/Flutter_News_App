@@ -1,15 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:news/auth/SignIn.dart';
 import 'package:news/constant/color_constant.dart';
-import 'package:news/login/sign_in.dart';
 
-class Ayarlar extends StatelessWidget {
+class Settings extends StatelessWidget {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: whiteColor,
       appBar: buildAppBar(),
       body: Container(
         child: buildList(context),
@@ -23,12 +23,12 @@ class Ayarlar extends StatelessWidget {
       backgroundColor: ColorConstants.instance.darkBurgundy,
       title: Text(
         "Ayarlar",
-        style: TextStyle(color: Colors.black),
+        style: TextStyle(color: blackColor),
       ),
       actions: [
         Padding(
           padding: const EdgeInsets.all(10.0),
-          child: Icon(Icons.search, color: Colors.black),
+          child: Icon(Icons.search, color: blackColor),
         ),
       ],
     );
@@ -109,7 +109,7 @@ class Ayarlar extends StatelessWidget {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => GirisYap(),
+                      builder: (context) => SignIn(),
                     ));
               },
             ),
@@ -139,7 +139,7 @@ class Ayarlar extends StatelessWidget {
     return Divider(
       thickness: 1.5,
       height: 15.0,
-      color: Colors.grey[400],
+      color: grey,
     );
   }
 }

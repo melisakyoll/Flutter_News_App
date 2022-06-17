@@ -11,6 +11,7 @@ class News {
     status = json['status'];
     totalResults = json['totalResults'];
     if (json['articles'] != null) {
+      // ignore: deprecated_member_use
       articles = new List<Articles>();
       json['articles'].forEach((v) {
         articles.add(new Articles.fromJson(v));
