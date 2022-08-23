@@ -8,9 +8,12 @@
     <application
         android:name="${io.flutter.app.FlutterApplication}"
         android:label="news"
+        tools:node="replace"
+        android:allowBackup="true"
+        tools:replace="android:allowBackup,icon,theme,label"
         android:icon="@mipmap/launcher_icon">
         <activity
-            android:name=".MainActivity"
+
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
