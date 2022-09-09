@@ -6,7 +6,7 @@ abstract class HomeAppBar extends StatelessWidget
     with PreferredSizeWidget
     implements BaseState {
   final String text;
-  const HomeAppBar({Key key, this.text}) : super(key: key);
+  const HomeAppBar({required Key key, required this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

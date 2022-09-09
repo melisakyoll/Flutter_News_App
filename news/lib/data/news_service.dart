@@ -11,7 +11,7 @@ class NewsService {
   factory NewsService() {
     return _singleton;
   }
-  static Future<List<Articles>>getNews() async {
+  static Future<List<Articles>?> getNews() async {
     String url =
         'http://newsapi.org/v2/top-headlines?country=tr&category=business&apiKey=3618b01c9acc4736afae75a85d4eee2d';
     final response = await http.get(url);

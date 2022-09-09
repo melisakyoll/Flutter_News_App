@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         "/Kayit": (BuildContext context) => SignUp(),
         "/Ayarlar": (BuildContext context) => Settings(),
       },
-      home: SplashScreen(),
+      home: HomePage(),
     );
   }
 }

@@ -1,4 +1,4 @@
-// ignore_for_file: deprecated_member_use
+// ignore_for_file: deprecated_member_use, import_of_legacy_library_into_null_safe
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +11,7 @@ import 'package:news/pages/home_page.dart';
 FirebaseAuth _auth = FirebaseAuth.instance;
 
 class SignIn extends StatefulWidget {
-  SignIn({Key key}) : super(key: key);
+  SignIn({Key? key}) : super(key: key);
 
   @override
   _SignInState createState() => _SignInState();
@@ -44,8 +44,8 @@ class _SignInState extends State<SignIn> {
               Padding(
                 padding: EdgeInsets.fromLTRB(40.0, 8.0, 40.0, 8.0),
                 child: TextFormField(
-                  validator: (String value) {
-                    if (value.isEmpty) {
+                  validator: (String? value) {
+                    if (value!.isEmpty) {
                       return "E - Posta Gereklidir";
                     }
                     return null;
@@ -74,8 +74,8 @@ class _SignInState extends State<SignIn> {
               Padding(
                 padding: EdgeInsets.fromLTRB(40.0, 8.0, 40.0, 8.0),
                 child: TextFormField(
-                  validator: (String value) {
-                    if (value.isEmpty) {
+                  validator: (String? value) {
+                    if (value!.isEmpty) {
                       return "Parola Gereklidir";
                     }
                     return null;
@@ -108,7 +108,7 @@ class _SignInState extends State<SignIn> {
                   children: [
                     RaisedButton(
                       onPressed: () {
-                        if (_key.currentState.validate()) {
+                        if (_key.currentState!.validate()) {
                           //_signInWithEmailAndPassword();
                         }
                       },
@@ -171,10 +171,10 @@ class _SignInProv extends StatefulWidget {
   final Function signInMethod;
 
   const _SignInProv({
-    Key key,
-    @required this.infoText,
-    @required this.buttonType,
-    @required this.signInMethod,
+    Key? key,
+    required this.infoText,
+    required this.buttonType,
+    required this.signInMethod,
   }) : super(key: key);
 
   @override

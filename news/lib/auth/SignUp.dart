@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:news/constant/color_constant.dart';
 
 class SignUp extends StatefulWidget {
-  SignUp({Key key}) : super(key: key);
+  SignUp({Key? key}) : super(key: key);
 
   @override
   _SignUpState createState() => _SignUpState();
@@ -45,9 +45,9 @@ class _SignUpState extends State<SignUp> {
                 Padding(
                   padding: EdgeInsets.fromLTRB(40.0, 8.0, 40.0, 8.0),
                   child: TextFormField(
-                    validator: (String value) {
-                      if (value.isEmpty) {
-                        return "İsism - Soyisim Gereklidir";
+                    validator: (String? value) {
+                      if (value!.isEmpty) {
+                        return "İsim - Soyisim Gereklidir";
                       }
                       return null;
                     },
@@ -76,8 +76,8 @@ class _SignUpState extends State<SignUp> {
                 Padding(
                   padding: EdgeInsets.fromLTRB(40.0, 8.0, 40.0, 8.0),
                   child: TextFormField(
-                    validator: (String value) {
-                      if (value.isEmpty) {
+                    validator: (String? value) {
+                      if (value!.isEmpty) {
                         return "E - Posta Gereklidir";
                       }
                       return null;
@@ -107,8 +107,8 @@ class _SignUpState extends State<SignUp> {
                 Padding(
                   padding: EdgeInsets.fromLTRB(40.0, 8.0, 40.0, 8.0),
                   child: TextFormField(
-                    validator: (String value) {
-                      if (value.isEmpty) {
+                    validator: (String? value) {
+                      if (value!.isEmpty) {
                         return "Parola Gereklidir";
                       }
                       return null;
@@ -149,8 +149,8 @@ class _SignUpState extends State<SignUp> {
                           child: Text("Kayıt Ol",
                               style: TextStyle(color: whiteColor)),
                           onPressed: () {
-                            if (_key.currentState.validate()) {
-                              _register();
+                            if (_key.currentState!.validate()) {
+                              // _register();
                             }
                           },
                         )
@@ -176,11 +176,10 @@ class _SignUpState extends State<SignUp> {
     );
   }
 
-  void _register() async {
+  /*void _register() async {
     try {
-      final UserCredential userCredential =
-          await _auth.createUserWithEmailAndPassword(
-              email: mailcontroller.text, password: passcontroller.text);
+      final userCredential = await _auth.createUserWithEmailAndPassword(
+          email: mailcontroller.text, password: passcontroller.text);
       final User user = userCredential.user;
       if (user != null) {
         setState(() {
@@ -190,5 +189,5 @@ class _SignUpState extends State<SignUp> {
     } catch (e) {
       print(e.toString());
     }
-  }
+  }*/
 }

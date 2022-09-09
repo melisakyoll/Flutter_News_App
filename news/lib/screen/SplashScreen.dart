@@ -5,7 +5,7 @@ import 'package:news/auth/SignIn.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class SplashScreen extends StatefulWidget {
-  SplashScreen({Key key}) : super(key: key);
+  SplashScreen({Key? key}) : super(key: key);
 
   @override
   _SplashScreenState createState() => _SplashScreenState();

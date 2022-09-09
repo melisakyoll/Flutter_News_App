@@ -1,8 +1,8 @@
 class Source {
-  Null id;
-  String name;
+  int? id;
+  String? name;
 
-  Source({this.id, this.name});
+  Source({this.id, required this.name});
 
   Source.fromJson(Map<String, dynamic> json) {
     id = json['id'];
